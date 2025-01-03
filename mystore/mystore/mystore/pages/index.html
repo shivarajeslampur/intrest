@@ -1,0 +1,78 @@
+{% extends 'theme.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Document</title>
+</head>
+<body>
+    <h1><b>MY PRODUCTS</b></h1>
+
+    
+    <table border="5">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Price</th>
+        </tr>
+        {% for i in products %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.desc }}</td>
+            <td><img src="{{ i.image.url }}"></td>
+            <td>{{ i.price }}</td>
+            
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+        <!-- Categories list -->
+<div class="col-lg-3">
+    <div class="list-group border shadow">
+        <a href="/" class="list-group-item">
+            <button class="btn btn-light">
+                All Products
+            </button>
+        </a>
+        <!-- Example for additional categories -->
+        {% for j in categories %}
+        <a href="/?category={{j.id}}" class="list-group-item list-group-item-action">
+            <button class="btn btn-dark">
+                {{ j.name }}
+            </button>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+        <!--product list-->
+
+
+            {% for i in products %}
+            <div class="col-lg-3 mb-4">
+                <div class="card" style="width: 15rem; height: 30rem;">
+                    <div class="card-header">
+                        <img src="{{ i.image.url }}" alt="Product Image" class="img-fluid">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i.name }}</h5>
+                        <p class="card-text">{{ i.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-muted">Price: {{ i.price }}</p>
+                        <button class="btn btn-primary">BookNow</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

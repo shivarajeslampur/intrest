@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Agricultural Product</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+    <header>
+        <h1>Agriculture Portal</h1>
+    </header>
+    <div class="container">
+        <h2>Add Agricultural Product</h2>
+        <form method="get" action="{% url 'submitform' %}">
+       
+
+            <div class="form-group">
+                <label for="product_name">Product Name:</label>
+                <input type="text" id="product_name" name="product_name" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Agriculture Portal. All rights reserved    ESLAMPUR SHIVARAJ-/.</p>
+    </footer>
+
+    <!-- Button to open the HTML data -->
+    <button id="openButton">PERSONAL DATA</button>
+
+    <!-- HTML data to be opened -->
+    <div id="htmlData" style="display: none;">
+        <!-- Your HTML data goes here -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Additional HTML Data</title>
+        </head>
+        <body>
+            <h1>Additional HTML Data</h1>
+            <!-- Add more content here -->
+        </body>
+        </html>
+    </div>
+
+    <script>
+        
+        document.getElementById('openButton').addEventListener('click', function() {
+            var htmlData = document.getElementById('htmlData').innerHTML;
+            var newWindow = window.open('', 'HTML Data', 'height=400,width=600');
+            newWindow.document.write(htmlData);
+        });
+    </script>
+</body>
+</html>

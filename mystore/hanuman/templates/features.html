@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Website</title>
+    <link rel="stylesheet" href="/static/2.css">
+    <!-- Add any additional CSS files for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!-- Add CSS for Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Add CSS for Owl Carousel theme -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Agriculture Portal</h1>
+            <nav>
+                <ul>
+                    <li><a href="#price">Price</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#other-features">Other Features</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="price">
+        <div class="container">
+            <h2>Price</h2>
+            <!-- Add content about price here -->
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <!-- Add content about features here -->
+            <div class="owl-carousel">
+                <!-- Add carousel items here -->
+                <div class="item"><img src="/static/hanuman.jpg" alt="Image 1"></div>
+                <div class="item"><img src="/static/shiva.jpg" alt="Image 2"></div>
+                <!-- Add more carousel items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="other-features">
+        <div class="container">
+            <h2>Other Features</h2>
+            <!-- Add content about other features here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Agriculture Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Add jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Add Owl Carousel JavaScript -->
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
